@@ -4,17 +4,18 @@ import PlantList from "./PlantList";
 import Search from "./Search";
 
 function PlantPage() {
+  const[plants, setPlants] = React.useState([]);
 
   useEffect(() => {
     fetch("http://localhost:6001/plants")
-      .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((r) => r.json())
+      .then((p) => console.log(p));
   }, [])
 
   return (
     <div className="plant-page">
-      <Search />
       <NewPlantForm />
+      <Search />
       <PlantList />
     </div>
   );
