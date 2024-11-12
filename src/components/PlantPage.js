@@ -12,6 +12,10 @@ function PlantPage() {
       .then((p) => console.log(p));
   }, [])
 
+  function addPlant(newPlant) { 
+    setPlants([...plants, newPlant]);
+  }
+
   return (
     <div className="plant-page">
       <NewPlantForm />
