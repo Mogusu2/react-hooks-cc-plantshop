@@ -1,6 +1,11 @@
-import React from "react";
+import React,{ useState} from "react";
 
-function PlantCard() {
+function PlantCard({plant}) {
+  const [isClicked, setIsClicked] = useState(true);
+
+  function handleClick() {
+    setIsClicked(!isClicked);
+  }
   return (
     <li className="card" data-testid="plant-item">
       <img src={"https://via.placeholder.com/400"} alt={"plant name"} />
